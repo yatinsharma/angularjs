@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My First AngularJS Project</title>
+	<style type="text/css">
+	table, td, tr{
+		border: 1px solid #ccc;
+	}
+	.even{
+		background-color: #ff00ff;
+	}
+	.odd{
+		background-color: #0000ff;
+	}
+	</style>
+</head>
+<body>
+	<div>
+		<div>
+			Click Event: 
+			<button id="btn1" onclick="onClickButton()">Click Me</button>
+		</div>
+		<div class="div-class">
+			Hard coded value
+		</div>
+		<div id="div3" class="div-class"></div>
+		<div>
+			<button onclick="onShowUser()">Show User</button>
+		</div>
+		<table id="table1">
+			<tr>
+				<td><b>User Name</b></td>
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript">
+		function onClickButton(){
+			var arrayOfDiv = document.getElementsByClassName("div-class");
+			for(var i=0; i<arrayOfDiv.length; i++){
+				arrayOfDiv[i].innerHTML = "Value aaded by for loop " + i;
+			}
+		}
+
+		function onShowUser(){
+			var arrayUsers = ["Yatin", "Rajiv", "Raj Kumar", "Sandeep", "Yatin", "Rajiv", "Raj Kumar", "Sandeep", "Yatin", "Rajiv", "Raj Kumar", "Sandeep", "Yatin", "Rajiv", "Raj Kumar", "Sandeep", "Yatin", "Rajiv", "Raj Kumar", "Sandeep", "Yatin", "Rajiv", "Raj Kumar", "Sandeep", "Yatin", "Rajiv", "Raj Kumar", "Sandeep"];
+			var table = document.getElementById("table1");
+			for(var i=0; i < arrayUsers.length; i++){
+				table.innerHTML = table.innerHTML + "<tr><td class='"+ (i % 2 == 0 ? "even" : "odd") +"'>"+ arrayUsers[i] +"</td></tr>";
+			}
+		}
+	</script>
+</body>
+</html>
